@@ -1,21 +1,13 @@
 from num2words import num2words
 
-food01 = float(input("Food Price: "))
-food02 = float(input("Food Price: "))
-food03 = float(input("Food Price: "))
+price1 = float(input('price1: '))
+price2 = float(input('price2: '))
+price3 = float(input('price3: '))
 
-price = round(food01 + food02 + food03, 1)
+total = price1 + price2 + price3
+yaxlit = round(total, 2)
+eng = num2words(total, lang = 'en')
+rus = num2words(total, lang = 'ru')
 
-words_en = num2words(
-    price, 
-    to='currency', 
-    currency='USD'
-)
-words_ru = num2words(
-    price, 
-    lang='ru', 
-    to='currency', 
-    currency='USD'
-)
-
-print(price, words_en, words_ru)
+print(f'umumiy narx $ {total}, {eng}, {rus}')
+print(f'yaxlitlangan narx $ {yaxlit}, {eng}, {rus}')
